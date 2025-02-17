@@ -1,0 +1,58 @@
+---
+title: 'Project Part 1: Explanatory Analysis - Movies'
+author: "Carol Weng"
+date: "2023-11-20"
+output: html_document
+---
+
+```{r include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message=FALSE)
+options(scipen = 999)
+library(tidyverse)
+library(knitr)
+library(corrplot)
+library(gridExtra)
+library(GGally)
+```
+
+```{r}
+# change "Bikes.csv" to the file you want to work with
+Movies <- read_csv("Movies.csv")
+```
+
+```{r, fig.height=3, fig.width=6}
+ggplot(data=Movies, aes(x = RottenTomatoes, y = AudienceScore, size = Budget)) + 
+  geom_point() +
+  stat_smooth(method="lm", se=FALSE) +
+  ggtitle("Scatterplot comparing Rotten Tomatoes Score vs. Audience Score") + 
+  xlab("Rotten Tomatoes Score") +
+  ylab("Audience Score")
+```
+
+```{r, fig.height=3, fig.width=6}
+ggplot(data=Movies, aes(x=Budget, y=Genre)) + 
+         geom_boxplot() +
+         ggtitle("Boxplot comparing Budget by Genre") + 
+         xlab("Budget") +
+         ylab("Genre") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1), 
+        axis.text.y = element_text(size = 8))
+```
+
+```{r, fig.height=3, fig.width=6}
+YearF <- as.factor(Movies$Year)
+Movies_AudienceScore_Summary_Year <- Movies %>% group_by(Year) %>%
+  summarize(Max_AudienceScore = max(AudienceScore, na.rm=TRUE),
+            Min_AudienceScore = min(AudienceScore, na.rm=TRUE), 
+            Mean_AudienceScore = mean(AudienceScore, na.rm=TRUE), 
+            Median_AudienceScore = median(AudienceScore,na.rm=TRUE),
+            Number_of_AudienceScore = n())
+
+kable(Movies_AudienceScore_Summary_Year)
+```
+
+The first graph is a scatterplot with rotten tomatoes score as x-axis and audience score as y-axis, and size as budget. We can see that there is an upward positive trend of the scatterplot, so a linear line was drawn to fit the trend of the data, assuming the audience score changes linearly with rotten tomatoes score. We can see that the slope of the linear line is upward, which means that the rotten tomatoes score, and audience scores have a positive relationship. The graph shows that the higher the rotten tomatoes score, the higher the audience score. We can also see the the size of the dots tend to be smaller when the score is lower and bigger when the score is higher, which means that higher budget movies tend to get a higher score, while movies with less budger tend to get a lower score.
+
+The second graph is a box plot showing the budget for each genre. We can see that Action, Adventure, and Musical are the top three genres with the highest budget. Musical has the highest mean while Action has the biggest range of budget include the highest budget. We can also see that documentaries have the lowest budget following horror and concert which also have a fairly small budget. Connect back to the first graph, genres who get more budget might be getting higher scores.
+
+The table shows the median, mean, maximum and minimum of the audience score of movies grouped by years. We can see that 2015 movies have the highest mean and median while 2016 movies have the lowest mean, and 2017 movies have the lowest median. We can also see that there are only 2 audience scores for 2015 movies, which are very small compared to movies in 2016 with 171 audience scores and 2017 with 142 audience scores. It’s hard to determine whether 2015 has better movies than 2016 and 2017 because even though 2015 has the highest audience scores in mean and median, the number of counts is small. They might just happen to have audience scores for 2015 movies with high audience scores, or just have a certain genre of movie that tends to have higher audience scores. It’s more realistic to assume the median and mean are more accurate for 2016 and 2017 because there are more counts. 

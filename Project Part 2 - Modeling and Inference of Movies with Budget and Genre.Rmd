@@ -1,0 +1,442 @@
+---
+title: "Project Part 2 - Modeling and Inference of Movies with Budget and Genre"
+author: "Carol Weng"
+date: "2023-11-20"
+output: html_document
+---
+
+```{r include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message=FALSE)
+options(scipen = 999)
+library(tidyverse)
+library(knitr)
+library(corrplot)
+library(gridExtra)
+library(GGally)
+```
+
+```{r}
+# change "Bikes.csv" to the file you want to work with
+Movies <- read_csv("Movies.csv")
+```
+
+```{r, fig.height=3, fig.width=6}
+ggplot(data=Movies, aes(x = Budget, y = RottenTomatoes)) + 
+  geom_point() +
+  stat_smooth(method="lm", se=FALSE) +
+  ggtitle("Scatterplot showing relationship between Rotten Tomatoes Score and Budget") + 
+  xlab("Budget") +
+  ylab("Rotten Tomatoes Score")
+
+M_Movie_bgt <- lm(data=Movies, RottenTomatoes~Budget)
+M_Movie_bgt
+```
+Interpretation of regression coefficients in context:
+
+B0: On average, a movie with 0 budget is expected to have 56.92303 in rotten tomatoes scores.
+
+B1: For each additional million spent in budget, the rotten tomatoes scores is expected to increase by 0.02349.
+
+```{r}
+# First Permutation
+ShuffledMovies <- Movies    
+ShuffledMovies$Budget <- ShuffledMovies$Budget[sample(1:nrow(ShuffledMovies))] 
+Shuffle1df <- data.frame(ShuffledMovies$Movie, Movies$RottenTomatoes, Movies$Budget, ShuffledMovies$Budget)
+names(Shuffle1df) <- c("Movie", "RottenTomatoes", "Budget", "Shuffled_Budget")
+kable(head(Shuffle1df))
+
+M_Movies_Shuffle1 <- lm(data=Shuffle1df, RottenTomatoes~Shuffled_Budget)
+summary(M_Movies_Shuffle1)$coef[2]
+
+# Second Permutation
+ShuffledMovies <- Movies   
+ShuffledMovies$Budget <- ShuffledMovies$Budget[sample(1:nrow(ShuffledMovies))] 
+Shuffle2df <- data.frame(ShuffledMovies$Movie, Movies$RottenTomatoes, Movies$Budget, ShuffledMovies$Budget)
+names(Shuffle2df) <- c("Movie", "RottenTomatoes", "Budget", "Shuffled_Budget")
+kable(head(Shuffle2df))
+
+M_Movies_Shuffle2 <- lm(data=Shuffle2df, RottenTomatoes~Shuffled_Budget)
+summary(M_Movies_Shuffle2)$coef[2]
+
+# Third Permutation
+ShuffledMovies <- Movies    
+ShuffledMovies$Budget <- ShuffledMovies$Budget[sample(1:nrow(ShuffledMovies))] 
+Shuffle3df <- data.frame(ShuffledMovies$Movie, Movies$RottenTomatoes, Movies$Budget, ShuffledMovies$Budget)
+names(Shuffle3df) <- c("Movie", "RottenTomatoes", "Budget", "Shuffled_Budget")
+kable(head(Shuffle3df))
+
+M_Movies_Shuffle3 <- lm(data=Shuffle3df, RottenTomatoes~Shuffled_Budget)
+summary(M_Movies_Shuffle3)$coef[2]
+```
+
+```{r}
+b1 <- M_Movie_bgt$coef[2] ## record value of b1 from actual data
+
+## perform simulation
+b1Sim <- rep(NA, 10000)          ## vector to hold results
+ShuffledMovies <- Movies    ## create copy of dataset
+for (i in 1:10000){
+  #randomly shuffle acceleration times
+ShuffledMovies$Budget <- ShuffledMovies$Budget[sample(1:nrow(ShuffledMovies))] 
+ShuffledMovies_M<- lm(data=ShuffledMovies, RottenTomatoes ~ Budget)   #fit model to shuffled data
+b1Sim[i] <- ShuffledMovies_M$coef[2]  ## record b1 from shuffled model
+}
+Movies_BudgetSimulationResults <- data.frame(b1Sim)  #save results in dataframe
+
+b1 <- M_Movie_bgt$coef[2] ## record value of b1 from actual data
+Movies_BudgetSimulationResultsPlot <- ggplot(data=Movies_BudgetSimulationResults, aes(x=b1Sim)) + 
+  geom_histogram(fill="lightblue", color="white") + 
+  geom_vline(xintercept=c(b1, -1*b1), color="red") + 
+  xlab("Simulated Value of b1") + ylab("Frequency") + 
+  ggtitle("Distribution of b1 under assumption of no relationship")
+Movies_BudgetSimulationResultsPlot
+mean(abs(b1Sim) > abs(b1))
+```
+
+State Null and Alternative hypothesis, interpret your stimulation-based p-value in context, and state what we should conclude about the relationship between your variables:
+
+Null Hypothesis: Among all movies, there is no relationship between Rotten tomatoes scores and budget.
+
+Alternative Hypothesis: Among all movies, there is a relationship between Rotten tomatoes scores and budget.
+
+The p-value from the permutation test is 0.3234 and it represents the probability of observing a slope as or more extreme than 0.02349 by chance when there is actually no relationship between rotten tomatoes scores and budget.
+
+The p value 0.3234 which is higher than 0.3 which means that we do not have enoug evidence against the null hypothesis. The data could have plausibly obtained when the null hypothesis is true.
+
+## Add a second explanatory variable, diplay in plot visualizing the response variable and both explanatory variables together.
+## Fit a model to the data. Display the model coefficients.
+```{r}
+ggplot(data=Movies, aes(x = Budget, y = RottenTomatoes, color = Genre)) + 
+  geom_point() +
+  stat_smooth(method="lm", se=FALSE) +
+  ggtitle("Scatterplot showing relationship between Rotten Tomatoes Score, Budget, and Genre") + 
+  xlab("Budget") +
+  ylab("Rotten Tomatoes Score")+
+  theme(plot.title = element_text(size = 8), 
+        axis.title.x = element_text(size = 8),  
+        axis.title.y = element_text(size = 8),
+        legend.text = element_text(size = 8))
+
+M_Movie_bgt_gr <- lm(data=Movies, RottenTomatoes~Budget+Genre)
+M_Movie_bgt_gr
+
+M_Movie_Int <- lm(data=Movies, RottenTomatoes~Budget*Genre)
+M_Movie_Int
+
+anova(M_Movie_bgt_gr, M_Movie_Int)$F[2]
+```
+Interpret the regression coefficients for second model:
+
+B0: On average, a movie with 0 budget that is an action movie is expected to have 45.09732 rotten tomatoes scores.
+
+B1: For each addition million spend in movie, the rotten tomatoes score of an action movie is expected to increase by 0.06778.
+
+B2: On average, the rotten tomatoes scores of an adventure movie with 0 million in budget is expected to be 5.372 higher than an action movie with 0 million in budget.
+
+B3: On average, the rotten tomatoes scores of a black comedy movie with 0 million in budget is expected to be 20.80562 higher than an action movie with 0 million in budget.
+
+B4: On average, the rotten tomatoes scores of a comedy movie with 0 million in budget is expected to be 0.32351 higher than an action movie with 0 million in budget.
+
+B5: On average, the rotten tomatoes scores of a concert movie with 0 million in budget is expected to be 30.22486 higher than an action movie with 0 million in budget.
+
+B6: On average, the rotten tomatoes scores of a documentary movie with 0 million in budget is expected to be 8.4197 higher than an action movie with 0 million in budget.
+
+B7: On average, the rotten tomatoes scores of a drama movie with 0 million in budget is expected to be 21.21019 higher than an action movie with 0 million in budget.
+
+B8: On average, the rotten tomatoes scores of a horror movie with 0 million in budget is expected to be 11.29108 higher than an action movie with 0 million in budget.
+
+B9: On average, the rotten tomatoes scores of a musical movie with 0 million in budget is expected to be 28.64284 higher than an action movie with 0 million in budget.
+
+B10: On average, the rotten tomatoes scores of a romance comedy movie with 0 million in budget is expected to be 8.29648 higher than an action movie with 0 million in budget.
+
+B11: On average, the rotten tomatoes scores of a thriller movie with 0 million in budget is expected to be 5.55366 higher than an action movie with 0 million in budget.
+
+B12: On average, the rotten tomatoes scores of a western movie with 0 million in budget is expected to be 9.90912 higher than an action movie with 0 million in budget.
+
+Interaction should not be included because the f-statistic is 1.085291 which is small. F-statistics
+
+## Use bootstrapping to obtain confidence intervals associated with 2 different parameters in your second model.One of these should be a regression coefficient (bjbj) you are interested in, and the second should for an expected value of the response variable, given the value(s) or categories of the explanatory variable. Display both bootstrap distributions and write sentence interpreting each confidence interval in context.
+```{r}
+# Bootstrap Sample 1
+BootstrapSample1 <- sample_n(Movies , 400, replace=TRUE) %>% 
+  select(Movie, RottenTomatoes, Budget, Genre)  
+BootstrapSample1
+
+Mb1 <- lm(data=BootstrapSample1, RottenTomatoes ~ Budget) 
+Mb1
+
+# Bootstrap Sample 2
+BootstrapSample2 <- sample_n(Movies , 400, replace=TRUE) %>% 
+  select(Movie, RottenTomatoes, Budget, Genre)  
+BootstrapSample2
+
+Mb2 <- lm(data=BootstrapSample2, RottenTomatoes ~ Budget) 
+Mb2
+
+# Bootstrap Sample 3
+BootstrapSample3 <- sample_n(Movies , 400, replace=TRUE) %>% 
+  select(Movie, RottenTomatoes, Budget, Genre)  
+BootstrapSample3
+
+Mb3 <- lm(data=BootstrapSample3, RottenTomatoes ~ Budget) 
+Mb3
+```
+
+```{r}
+M <- lm(data=Movies, RottenTomatoes ~ Budget) 
+Sample_b1 <- M$coefficients[2] 
+Bootstrap_b1 <- rep(NA, 10000)  
+
+for (i in 1:10000){
+BootstrapSample <- sample_n(Movies , 400, replace=TRUE)   
+M <- lm(data=BootstrapSample, RottenTomatoes ~ Budget) 
+Bootstrap_b1[i] <- M$coefficients[2] # record b1 
+}
+Movies_Bootstrap_Slope_Results <- data.frame(Bootstrap_b1)  
+
+Movies_Bootstrap_Plot_Slope <- ggplot(data=Movies_Bootstrap_Slope_Results, aes(x=Bootstrap_b1)) +
+  geom_histogram(color="white", fill="lightblue") + 
+  xlab("Slope in Bootstrap Sample") + ylab("Frequency") +
+  ggtitle("Bootstrap Distribution for Slope") 
+Movies_Bootstrap_Plot_Slope
+```
+
+```{r}
+SE_b1 <- sd(Movies_Bootstrap_Slope_Results$Bootstrap_b1)
+SE_b1
+```
+
+```{r}
+c(Sample_b1 - 2*SE_b1, Sample_b1 + 2*SE_b1) 
+```
+
+```{r}
+Movies_Bootstrap_Plot_Slope + 
+  geom_segment(aes(x=Sample_b1 - 2*SE_b1,xend=Sample_b1 + 2*SE_b1, y=50, yend=50), 
+               color="gold", linewidth=10, alpha=0.01) 
+```
+We are 95% confident that among all movies, for each 1 unit increase in budget, rotten tomatoes scores would decrease between -0.02477175 and 0.07174237, on average.
+
+# Expected value of Rotten tomatoes scores for an action movie with a budget of 15 million.
+```{r}
+M_Movie_bgt_gr <- lm(data=Movies, RottenTomatoes~Budget+Genre)
+
+Mb1 <- lm(data=BootstrapSample1, RottenTomatoes~Budget+Genre)
+b0 <- Mb1$coefficients[1]
+b1 <- Mb1$coefficients[2] 
+b0+15*b1
+
+Mb2 <- lm(data=BootstrapSample2, RottenTomatoes~Budget+Genre) 
+b0 <- Mb2$coefficients[1] 
+b1 <- Mb2$coefficients[2] 
+b0+15*b1
+
+Mb3 <- lm(data=BootstrapSample3, RottenTomatoes~Budget+Genre) 
+b0 <- Mb3$coefficients[1] 
+b1 <- Mb3$coefficients[2] 
+b0+15*b1
+
+M <- lm(data=Movies, RottenTomatoes~Budget+Genre) 
+Sample_b0 <- M$coefficients[1] 
+Sample_b1 <- M$coefficients[2] 
+Sample_Exp15 <- Sample_b0 + 15*Sample_b1 
+Bootstrap_b0 <- rep(NA, 10000)  
+Bootstrap_b1 <- rep(NA, 10000)  
+
+for (i in 1:10000){
+BootstrapSample <- sample_n(Movies , 400, replace=TRUE)   
+M <- lm(data=BootstrapSample, RottenTomatoes~Budget+Genre) 
+Bootstrap_b0[i] <- M$coefficients[1] 
+Bootstrap_b1[i] <- M$coefficients[2] 
+}
+
+Bootstrap_Exp15 <-  Bootstrap_b0 + 15*Bootstrap_b1
+
+Movies_Bootstrap_Exp15_Results <- data.frame(Bootstrap_b0, Bootstrap_b1, Bootstrap_Exp15)  
+
+Movies_Bootstrap_Plot_Exp15 <- ggplot(data=Movies_Bootstrap_Exp15_Results, aes(x=Bootstrap_Exp15)) +  
+  geom_histogram(color="white", fill="lightblue") + 
+  xlab("Expected Rotten Tomatoes Scores in Bootstrap Sample") + ylab("Frequency") +
+  ggtitle( "Bootstrap Distribution for Exp. Rotten Tomatoes Scores when Budget=15") 
+Movies_Bootstrap_Plot_Exp15
+```
+
+```{r}
+SE_Exp15 <- sd(Movies_Bootstrap_Exp15_Results$Bootstrap_Exp15)
+SE_Exp15
+```
+
+```{r}
+c(Sample_Exp15 - 2*SE_Exp15, Sample_Exp15 + 2*SE_Exp15) 
+```
+
+```{r}
+Movies_Bootstrap_Plot_Exp15 + 
+  geom_segment(aes(x=Sample_Exp15 - 2*SE_Exp15,xend=Sample_Exp15 + 2*SE_Exp15, y=50, yend=50), 
+               color="gold", size=10, alpha=0.01) 
+```
+We are 95% confident that the average rotten tomatoes scores of an action movie with a budget of 15 million is between 36.88178 and 55.34631.
+
+```{r}
+M_Movie_bgt_gr <- lm(data=Movies, RottenTomatoes~Budget+Genre)
+
+M <- lm(data=Movies, RottenTomatoes~Budget+Genre) 
+Sample_b0 <- M$coefficients[1] 
+Sample_b1 <- M$coefficients[2] 
+Sample_b2 <- M$coefficients[3] 
+Sample_b3 <- M$coefficients[4]
+Sample_b4 <- M$coefficients[5]
+Sample_b5 <- M$coefficients[6]
+Sample_b6 <- M$coefficients[7]
+Sample_b7 <- M$coefficients[8]
+Sample_b8 <- M$coefficients[9]
+Sample_b9 <- M$coefficients[10]
+Sample_b10 <- M$coefficients[11]
+Sample_b11 <- M$coefficients[12]
+Sample_b12 <- M$coefficients[13]
+M
+
+# Estimate: Action movie with 15 million budget
+
+Sample_b0 + 15*Sample_b1
+```
+
+```{r}
+Mb1 <- lm(data=BootstrapSample1, RottenTomatoes~Budget+Genre)
+b0 <- Mb1$coefficients[1] 
+b1 <- Mb1$coefficients[2] 
+b2 <- Mb1$coefficients[3] 
+b3 <- Mb1$coefficients[4] 
+b4 <- Mb1$coefficients[5]
+b5 <- Mb1$coefficients[6]
+b6 <- Mb1$coefficients[7]
+b7 <- Mb1$coefficients[8]
+b8 <- Mb1$coefficients[9]
+b9 <- Mb1$coefficients[10]
+b10 <- Mb1$coefficients[11]
+b11 <- Mb1$coefficients[12]
+b12 <- Mb1$coefficients[13]
+Mb1
+
+b0 + 15*b1
+```
+
+```{r}
+Mb2 <- lm(data=BootstrapSample2, RottenTomatoes~Budget+Genre)
+b0 <- Mb2$coefficients[1] 
+b1 <- Mb2$coefficients[2] 
+b2 <- Mb2$coefficients[3] 
+b3 <- Mb2$coefficients[4] 
+b4 <- Mb2$coefficients[5]
+b5 <- Mb2$coefficients[6]
+b6 <- Mb2$coefficients[7]
+b7 <- Mb2$coefficients[8]
+b8 <- Mb2$coefficients[9]
+b9 <- Mb2$coefficients[10]
+b10 <- Mb2$coefficients[11]
+b11 <- Mb2$coefficients[12]
+b12 <- Mb2$coefficients[13]
+Mb2
+
+b0 + 15*b1
+```
+
+```{r}
+Mb3 <- lm(data=BootstrapSample3, RottenTomatoes~Budget+Genre)
+b0 <- Mb3$coefficients[1] 
+b1 <- Mb3$coefficients[2] 
+b2 <- Mb3$coefficients[3] 
+b3 <- Mb3$coefficients[4] 
+b4 <- Mb3$coefficients[5]
+b5 <- Mb3$coefficients[6]
+b6 <- Mb3$coefficients[7]
+b7 <- Mb3$coefficients[8]
+b8 <- Mb3$coefficients[9]
+b9 <- Mb3$coefficients[10]
+b10 <- Mb3$coefficients[11]
+b11 <- Mb3$coefficients[12]
+b12 <- Mb3$coefficients[13]
+Mb3
+
+b0 + 15*b1
+```
+
+```{r}
+M_Movie_bgt_gr <- lm(data=Movies, RottenTomatoes~Budget+Genre)
+
+M <- lm(data=Movies, RottenTomatoes~Budget+Genre) 
+Sample_b0 <- M$coefficients[1] 
+Sample_b1 <- M$coefficients[2] 
+Sample_b2 <- M$coefficients[3] 
+Sample_b3 <- M$coefficients[4]
+Sample_b4 <- M$coefficients[5]
+Sample_b5 <- M$coefficients[6]
+Sample_b6 <- M$coefficients[7]
+Sample_b7 <- M$coefficients[8]
+Sample_b8 <- M$coefficients[9]
+Sample_b9 <- M$coefficients[10]
+Sample_b10 <- M$coefficients[11]
+Sample_b11 <- M$coefficients[12]
+Sample_b12 <- M$coefficients[13]
+
+Sample_Q1 <- Sample_b0 + 15*Sample_b1
+
+Bootstrap_b0 <- rep(NA, 10000)
+Bootstrap_b1 <- rep(NA, 10000)
+Bootstrap_b2 <- rep(NA, 10000) 
+Bootstrap_b3 <- rep(NA, 10000)
+Bootstrap_b4 <- rep(NA, 10000)
+Bootstrap_b5 <- rep(NA, 10000)
+Bootstrap_b6 <- rep(NA, 10000)
+Bootstrap_b7 <- rep(NA, 10000)
+Bootstrap_b8 <- rep(NA, 10000)
+Bootstrap_b9 <- rep(NA, 10000)
+Bootstrap_b10 <- rep(NA, 10000)
+Bootstrap_b11 <- rep(NA, 10000)
+Bootstrap_b12 <- rep(NA, 10000)
+
+for (i in 1:10000){
+BootstrapSample <- sample_n(Movies, 400, replace=TRUE)   #take bootstrap sample
+Mb <- lm(data=BootstrapSample, RottenTomatoes~Budget+Genre) 
+Bootstrap_b0[i] <- Mb$coefficients[1]
+Bootstrap_b1[i] <- Mb$coefficients[2] 
+Bootstrap_b2[i] <- Mb$coefficients[3]
+Bootstrap_b3[i] <- Mb$coefficients[4]
+Bootstrap_b4[i] <- Mb$coefficients[5]
+Bootstrap_b5[i] <- Mb$coefficients[6]
+Bootstrap_b6[i] <- Mb$coefficients[7]
+Bootstrap_b7[i] <- Mb$coefficients[8]
+Bootstrap_b8[i] <- Mb$coefficients[9]
+Bootstrap_b9[i] <- Mb$coefficients[10]
+Bootstrap_b10[i] <- Mb$coefficients[11]
+Bootstrap_b11[i] <- Mb$coefficients[12]
+Bootstrap_b12[i] <- Mb$coefficients[13]
+}
+
+Bootstrap_Q1 <-  Bootstrap_b0 + 15*Bootstrap_b1
+
+Movies_Bootstrap_Results <- data.frame(Bootstrap_b0, Bootstrap_b1, Bootstrap_b2, Bootstrap_b3, Bootstrap_b4, Bootstrap_b5, Bootstrap_b6, Bootstrap_b7, Bootstrap_b8, Bootstrap_b9, Bootstrap_b10, Bootstrap_b11, Bootstrap_b12, Bootstrap_Q1)
+
+Movies_Bootstrap_Plot_Q1 <- ggplot(data=Movies_Bootstrap_Results, 
+                                   aes(x=Bootstrap_Q1)) +  
+  geom_histogram(color="white", fill="lightblue") + 
+  xlab("Expected Rotten Tomatoe Score of an action movie with 15 million budget") + ylab("Frequency") +
+  ggtitle( "Bootstrap Distribution b0+15b1") 
+Movies_Bootstrap_Plot_Q1
+```
+
+```{r}
+SE_Q1 <- sd(Movies_Bootstrap_Results$Bootstrap_Q1)
+SE_Q1
+```
+
+```{r}
+c(Sample_Q1 - 2*SE_Q1, Sample_Q1 + 2*SE_Q1) 
+```
+
+```{r}
+Movies_Bootstrap_Plot_Q1 + 
+  geom_segment(aes(x=Sample_Q1 - 2*SE_Q1,xend=Sample_Q1 + 2*SE_Q1, y=50, yend=50), 
+               color="gold", size=10, alpha=0.01) 
+```
+We are 95% confident that the average rotten tomatoes scores for action movies with 15 million budge is between 36.90305 and 55.32505.

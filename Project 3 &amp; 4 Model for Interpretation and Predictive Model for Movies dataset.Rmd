@@ -1,0 +1,254 @@
+---
+title: "Project Part 3 & 4 Model for Interpretation and Predictive Model for Movies
+  dataset"
+author: "Carol Weng"
+date: "2023-11-20"
+output: html_document
+---
+
+```{r include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message=FALSE)
+options(scipen = 999)
+library(tidyverse)
+library(knitr)
+library(corrplot)
+library(gridExtra)
+library(GGally)
+```
+
+```{r}
+Movies <- read_csv("Movies.csv")
+
+Movies$Genre <- fct_collapse(Movies$Genre, "Comedy" = c("Romantic Comedy","Comedy", "Black Comedy"), "Action_Adventure"= c("Action", "Adventure"))
+```
+Because there are many categories for genre, Romance Comedy, Comedy, and Black Comedy are combined into Comedy. Action and Adventure were combined to Action_Adventure.
+
+## Part 3 - Multivariate Modeling
+
+Research Questions: How does production spending impact profit of a movie?
+
+```{r}
+cor(select_if(Movies, is.numeric), use="complete.obs") %>% round(2)
+```
+
+```{r}
+p1 <- ggplot(data=Movies, aes(x=Budget, y=WorldGross)) + geom_point()
+p2 <- ggplot(data=Movies, aes(x=Genre, y=WorldGross)) + geom_point()
+p3 <- ggplot(data=Movies, aes(x=LeadStudio, y=WorldGross)) + geom_point() 
+p4 <- ggplot(data=Movies, aes(x=OpeningWeekend, y=WorldGross)) + geom_point()
+p5 <- ggplot(data=Movies, aes(x=TheatersOpenWeek, y=WorldGross)) + geom_point()
+p6 <- ggplot(data=Movies, aes(x=BOAvgOpenWeekend, y=WorldGross)) + geom_point()
+grid.arrange(p1, p2, p3, p4, p5, p6, nrow=3)
+```
+
+```{r, fig.height=3, fig.width=6}
+Movies_M1 <- lm(data = Movies, log(WorldGross) ~ Budget + Genre + TheatersOpenWeek + I(TheatersOpenWeek^2))
+```
+
+```{r, fig.height=3, fig.width=6}
+ggplot(data=Movies, aes(x = WorldGross, y = Budget)) + 
+  geom_point() +
+  stat_smooth(method="lm", se=FALSE) +
+  ggtitle("Relationship between Budget and WorldGross") + 
+  xlab("World Gross") +
+  ylab("Budget")
+```
+
+```{r, fig.height=3, fig.width=6}
+ggplot(data=Movies, aes(x=WorldGross, y=Genre)) + 
+         geom_boxplot() +
+         ggtitle("Boxplot comparing World Gross by Genre") + 
+         xlab("WorldGross") +
+         ylab("Genre") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1), 
+        axis.text.y = element_text(size = 8))
+```
+
+# One paragraph discussion (5-7 sentences in length) explaining how you decided which variable(s) you chose your model. Justify why you chose to include the variables you did. Also, if there were any variables you considered adding to the model but didn’t, explain why you chose not to. Explain why you did or didn’t use any transformations.
+
+Research Questions: How does production spending impact profit of a movie?
+
+WorldGross will be the response variable exploring this research question because it is the total profit earned around the world for the movies.
+
+Correlation table:
+We can see that Foreign Gross, and Domestic Gross are both strongly correlated to World Gross the number was 0.98 and 0.94, this makes sense because world gross include foreign gross and domestic gross. But because Foreign and domestic gross are not production cost, they are not included in the model.
+
+Budget is included in the model because it is a big part of production spending. And we can see in the scatterplot that the dots showed a linear positive trend compared with world gross.
+
+TheatersOpenWeek is the number of screens for opening weekend. We can see in the correlation table that it is highly correlated to World Gross with 0.55, so it was added in the model. This could be related to the production spending because we are not sure whether budget includes advertisement fees or not, usually more numbers of screens for opening weekend means more advertisement fees so it is included in the model. Looking at the residual plot for TheatersOpenWeek, the graph shows a curve, so a quadratic term of TheatersOpenWeek was added to the graph.
+
+Genre is included in the model because the boxplot shows that some type of movies seems to have higher world gross in general. It can be included in production spending because some genre might spend more in production in general.
+
+I was considering including Lead Studio because some studio might be more famous more budget, but decided not to include because there are too many Lead Studio which made it hard to interpret and see the correlation for each of them.
+
+```{r, fig.height=3, fig.width=6}
+P1 <- ggplot(data=data.frame(Movies_M1$residuals), aes(y=Movies_M1$residuals, x=Movies_M1$fitted.values)) + geom_point() + ggtitle("Residual Plot") + xlab("Predicted Values") + ylab("Residuals")
+P2 <- ggplot(data=data.frame(Movies_M1$residuals), aes(x=Movies_M1$residuals)) + geom_histogram() + ggtitle("Histogram of Residuals") + xlab("Residual")
+P3 <- ggplot(data=data.frame(Movies_M1$residuals), aes(sample = scale(Movies_M1$residuals))) + stat_qq() + stat_qq_line() + xlab("Normal Quantiles") + ylab("Residual Quantiles") + ggtitle("QQ Plot")
+grid.arrange(P1, P2, P3, ncol=3)
+```
+
+# A one paragraph discussion of how well you think the model assumptions are satisfied. If you still have concerns about any model assumptions, explain why
+
+I added log for the response variable WorldGross because the residual graph showed right skewness and severed departure for the qq plot. After adding the log, the histogram seems to be roughly symmetric, QQ plot shows less departure from diagonal line but still some at the end. Some problem with normality assumption but not a lot.
+
+But there is violation of constant variance assumption because there seems to be bigger range on the left than right. This might because of the categorical variable genre because the residual plot showed previously of genre showed different range. 
+
+#Confidence intervals for each of your model coefficients.
+```{r, fig.height=3, fig.width=6}
+summary(Movies_M1)
+exp(confint(Movies_M1))
+```
+
+# A two to three paragraph discussion explaining the most interesting conclusions from your model. In your discussion, include interpretations of at least two model coefficients, their confidence intervals, and their associated p-values in context. Discuss the implications of your findings. Was there anything surprising or unusual? Note any limitations or concerns you might have about your conclusions.
+
+Interpretation:
+
+Budget:
+On average, for each additional million dollars in budget, the world gross is expected to increase by 0.004 million dollars.
+We are 95% confident that the world gross of a movie, on average, increases between 0.16% and 0.68% for each additional million dollars in budget.
+The p-value for Budget 0.00251 represent that there is strong evidence that there is a significant relationship between world gross and budget.
+
+TheatersOpenWeek:
+On average, for each additional screen for opening weekends, the world gross is expected to decrease by 0.0007 million dollars.
+We are 95% confident that the world gross of a movie, on average, decreases between 0.09% and 0.04% for each additional screen for opening weekends.
+The p-value for TheatersOpenWeek is < 0.0001, which means that there is a strong evidence that there is a significant relationship between world gross and number of screens for opening weekends.
+
+Budget, TheatersOpenWeek, I(TheatersOpenWeek^2), genre_documentary seems to have significant relationship with world gross. It was surprising that only documentary seems to have an effect on world gross. Genre in general seems not to be a good predictor of world gross/not related to world gross. The limitation and concern is that the model shows a violation of constant variance.
+
+# Calculate and interpret a confidence interval for an expected response and also a prediction interval. Choose values/categories of the explanatory variable(s) that are of interest.
+```{r, fig.height=3, fig.width=6}
+Movies_P <- data.frame(Budget = 100, Genre = "Documentary", TheatersOpenWeek = 3000)
+exp(predict(Movies_M1, newdata = Movies_P, interval="confidence", level=0.95))
+exp(predict(Movies_M1, newdata = Movies_P, interval="prediction", level=0.95))
+```
+Interpretation:
+Confidence Interval:
+We are 95% confident that the average world gross of all documentary movies with 100 million dollars budget and 3000 screens for opening weekends is between 13.4 and 60.2 million dollars.
+Prediction Interval:
+We are 95% confident that the world gross of an individual documentary movie with 100 million dollars budget and 3000 screens for opening weekends is between 4.3 and 187.3 million dollars.
+
+## Part 4 - Predictive Modeling
+
+```{r}
+Movies1 <- read_csv("Movies.csv")
+
+cor(select_if(Movies, is.numeric), use="complete.obs") %>% round(2)
+```
+
+```{r}
+p1 <- ggplot(data=Movies1, aes(x=RottenTomatoes, y=AudienceScore)) + geom_point()
+p2 <- ggplot(data=Movies1, aes(x=Genre, y=AudienceScore)) + geom_point()
+p3 <- ggplot(data=Movies1, aes(x=Budget, y=AudienceScore)) + geom_point()
+p4 <- ggplot(data=Movies1, aes(x=LeadStudio, y=AudienceScore)) + geom_point() 
+p5 <- ggplot(data=Movies1, aes(x=WorldGross, y=AudienceScore)) + geom_point()
+p6 <- ggplot(data=Movies1, aes(x=TheatersOpenWeek, y=AudienceScore)) + geom_point()
+p7 <- ggplot(data=Movies1, aes(x=BOAvgOpenWeekend, y=AudienceScore)) + geom_point()
+p8 <- ggplot(data=Movies1, aes(x=DomesticGross, y=AudienceScore)) + geom_point()
+p9 <- ggplot(data=Movies1, aes(x=ForeignGross, y=AudienceScore)) + geom_point()
+p10 <- ggplot(data=Movies1, aes(x=OpeningWeekend, y=AudienceScore)) + geom_point()
+grid.arrange(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, nrow=4)
+```
+
+# Cross-Validation
+```{r, fig.height=3, fig.width=6}
+library(tidyverse)
+library(caret)
+```
+
+```{r, fig.height=3, fig.width=6, echo=TRUE, warning=FALSE}
+control <- trainControl(method="repeatedcv", number=10, repeats=10, savePredictions = "all" )
+
+set.seed(11152023)   
+model1 <- train(data=Movies1, 
+                AudienceScore ~ RottenTomatoes ,  
+                method="lm", trControl=control)
+
+set.seed(11152023) 
+model2 <- train(data=Movies1, 
+                AudienceScore ~ RottenTomatoes + BOAvgOpenWeekend,  
+                method="lm", trControl=control)
+
+set.seed(11152023) 
+model3 <- train(data=Movies1, AudienceScore ~ RottenTomatoes + Genre + Budget + LeadStudio + WorldGross + OpeningWeekend,  
+                method="lm", trControl=control)
+
+set.seed(11152023)  
+model4 <- train(data=Movies1, AudienceScore ~ RottenTomatoes + BOAvgOpenWeekend + I(BOAvgOpenWeekend^2) + DomesticGross + I(DomesticGross^2) + OpeningWeekend,  method="lm", trControl=control)
+
+set.seed(11152023) 
+model5 <- train(data=Movies1, AudienceScore ~ RottenTomatoes + BOAvgOpenWeekend + DomesticGross,  method="lm", trControl=control)
+
+set.seed(11152023) 
+model6 <- train(data=Movies1, AudienceScore ~ RottenTomatoes + BOAvgOpenWeekend + DomesticGross + OpeningWeekend,  method="lm", trControl=control)
+
+set.seed(11152023) 
+model7 <- train(data=Movies1, AudienceScore ~ RottenTomatoes + BOAvgOpenWeekend + I(BOAvgOpenWeekend^2) + DomesticGross + I(DomesticGross^2) + OpeningWeekend,  method="lm", trControl=control)
+
+set.seed(11152023) 
+model8 <- train(data=Movies1, AudienceScore ~ RottenTomatoes + Genre + Budget + LeadStudio + WorldGross + OpeningWeekend + BOAvgOpenWeekend + Year,  method="lm", trControl=control)
+
+set.seed(11152023) 
+model9 <- train(data=Movies1, AudienceScore ~ RottenTomatoes + Genre + Budget + LeadStudio + WorldGross + OpeningWeekend + I(OpeningWeekend^2) + BOAvgOpenWeekend + Year + I(BOAvgOpenWeekend^2) + DomesticGross + I(DomesticGross^2),  method="lm", trControl=control)  
+
+set.seed(11152023) 
+model10 <- train(data=Movies1, AudienceScore ~ RottenTomatoes + I(RottenTomatoes^2) + Genre + Budget + I(Budget^2) + LeadStudio + WorldGross + I(WorldGross^2) + OpeningWeekend + I(OpeningWeekend^2) + BOAvgOpenWeekend + Year + I(BOAvgOpenWeekend^2) + DomesticGross + I(DomesticGross^2),  
+                method="lm", trControl=control)
+
+
+# Calculate RMSPE for each model
+RMSPE1 <- sqrt(mean((model1$pred$obs-model1$pred$pred)^2))
+RMSPE2 <- sqrt(mean((model2$pred$obs-model2$pred$pred)^2))
+RMSPE3 <- sqrt(mean((model3$pred$obs-model3$pred$pred)^2))
+RMSPE4 <- sqrt(mean((model4$pred$obs-model4$pred$pred)^2))
+RMSPE5 <- sqrt(mean((model5$pred$obs-model5$pred$pred)^2))
+RMSPE6 <- sqrt(mean((model6$pred$obs-model6$pred$pred)^2))
+RMSPE7 <- sqrt(mean((model7$pred$obs-model7$pred$pred)^2))
+RMSPE8 <- sqrt(mean((model8$pred$obs-model8$pred$pred)^2))
+RMSPE9 <- sqrt(mean((model9$pred$obs-model9$pred$pred)^2))
+RMSPE10 <- sqrt(mean((model10$pred$obs-model10$pred$pred)^2))
+```
+
+```{r, fig.height=3, fig.width=6}
+RMSPE1
+RMSPE2
+RMSPE3
+RMSPE4
+RMSPE5
+RMSPE6
+RMSPE7
+RMSPE8
+RMSPE9
+RMSPE10
+```
+
+```{r, fig.height=3, fig.width=6}
+TestData <- read_csv("MoviesNew.csv")
+predictions <- predict(model9, newdata=TestData)  # substitute your best model
+head(data.frame(predictions), 10)
+```
+
+# Study your predictions and see if they make sense to you. Write a paragraph summarizing your results. Address the following questions:
+
+    How complex was the model that did the best in cross-validation? Why do you think this model did the best?
+    Which predicted value came out the highest? What explanatory variable(s) do you think contributed to this case getting a high predicted value?
+    Which predicted value came out the lowest? What explanatory variable(s) do you think contributed to this case getting a low predicted value?
+
+The second most complex model (model9) did the best in the cross-validation. I think this model did the best because it included quadratic terms for the variables that appears to have a curve in the residual plots.
+
+The first movie Doctor Strange had the highest value of 84.89096 which is the highest from all the predicted value. Doctor Strange had the highest rotten tomatoes scores, BOAvgOpenWeekend, OpeningWeekend, WorldGross, and DomesticGross, it had the third highest budget as well. I think all these explanatory variables contributed to this movie getting a high predicted value.
+
+The lowest value is 23.33595 which is for the fourth movie Friend Request. This movie had the lowest rotten tomatoes score and BOAvgOpenWeekend. Budget, OpeningWeekend, WorldGross, and DomesticGross are one of the lowest three movies. I think all these explanatory variables contributed to why this movie gets the lowest predicted value.
+
+# Then, refer to the “True_Values.html” file, which contains the true values for each of the cases you’re trying to predict. Write a paragraph addressing the following questions.
+
+    How accurate were your predictions in general?
+    Which case(s) did the model do a good job of predicting? Why do you think the model did a good job in predicting these case?
+    Which case(s) did the model not predict well? What do you think made these cases hard to predict?
+
+I think my predictions in general is pretty accurate, some of them predict exactly what was the audience score, the biggest difference is around 25 lower than the true value.
+
+The model did a good job predicting the 8th movie Phoenix Forgotten because the prediction score is the same as the actual score 41. I think this model did a good job because the rotten tomatoes score is also 41. Rotten tomatoes scores are very correlated to the audience score. So even the other explanatory variables, the 8th movie are fairly low compared to other movies, it is still predicted accurately.
+
+The model did not predict the movie King Arthur: Legend of the Sword well. I think one reason why this movie is hard to predict because it has a low rotten tomatoes of 31 which is 38 lower than the true audience score, and rotten tomatoes are very correlated to the audience score, we can see in the correlation table that the correlation is 0.71. So even the other explanatory variables have higher number, the audience score was still predicted a lot lower.
+

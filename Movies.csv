@@ -1,0 +1,401 @@
+Movie,LeadStudio,RottenTomatoes,AudienceScore,Genre,TheatersOpenWeek,OpeningWeekend,BOAvgOpenWeekend,Budget,DomesticGross,WorldGross,ForeignGross,Year
+10 Cloverfield Lane,Paramount Pictures,90,79,Thriller,3391,24.73,7293,15,72.08,108.29,36.21,2016
+13 Hours: The Secret Soldiers of Benghazi,Paramount Pictures,51,82,Drama,2389,16.19,6777,50,52.85,69.41,16.56,2016
+A Hologram for the King,Roadside Attractions,72,55,Drama,401,1.14,2843,35,4.21,11.85,7.64,2016
+A Monster Calls,Focus Features,86,81,Drama,4,0.03,7500,43,3.74,46.41,42.67,2016
+Alice Through the Looking Glass,Walt Disney Studios Motion Pictures,30,48,Adventure,3763,26.86,7138,170,77.04,276.93,199.89,2016
+Allegiant,Lionsgate,11,41,Action,3740,29.03,7762,110,66.18,172.02,105.84,2016
+Allied,Paramount Pictures,60,63,Drama,3160,12.7,4019,106,40.1,119.27,79.17,2016
+Almost Christmas,Universal Pictures,49,64,Drama,2376,15.13,6368,17,42.16,42.49,0.33,2016
+Arrival,Paramount Pictures,94,82,Drama,2317,24.07,10388,47,100.55,203.13,102.58,2016
+Assassin's Creed,Twentieth Century Fox,18,43,Action,2970,10.28,3461,125,54.65,240.76,186.11,2016
+Bad Moms,STX Entertainment,58,63,Comedy,3215,23.82,7409,20,113.26,181,67.74,2016
+Bad Santa 2,Broad Green Pictures,22,33,Comedy,2920,6.18,2116,26,17.78,24.08,6.3,2016
+Barbershop: The Next Cut,Warner Bros.,90,66,Comedy,2661,20.24,7606,20,54.03,54.4,0.37,2016
+Batman v Superman: Dawn of Justice,Warner Bros.,28,63,Action,4242,166.01,39135,263,330.36,873.63,543.27,2016
+Ben-Hur,Paramount Pictures,25,53,Drama,3084,11.2,3632,95,26.41,91.67,65.26,2016
+Blair Witch,Lionsgate,37,31,Horror,3121,9.58,3070,10,20.78,38.99,18.21,2016
+Bleed for This,Open Road Films (II),69,69,Drama,1549,2.37,1530,16,5.08,7.17,2.09,2016
+Bridget Jones's Baby,Universal Pictures,78,65,Romantic Comedy,2927,8.57,2928,35,24.14,205.82,181.68,2016
+Cafe Society,Lionsgate,71,56,Drama,5,0.36,72000,30,11.1,44.36,33.26,2016
+Captain America: Civil War,Walt Disney Studios Motion Pictures,91,89,Action,4226,179.14,42390,250,408.08,1153.28,745.2,2016
+Captain Fantastic,Bleecker Street Media,82,85,Drama,4,0.09,22500,5,5.88,21.34,15.46,2016
+Central Intelligence,Warner Bros.,71,61,Comedy,3508,35.54,10131,50,127.44,217.19,89.75,2016
+Collateral Beauty,Warner Bros.,14,64,Drama,3028,7.1,2345,36,31.02,85.31,54.29,2016
+Compadres,Pantelion Films,38,51,Comedy,368,1.4,3804,3,3.13,7.45,4.32,2016
+Criminal,Lionsgate,31,47,Action,2683,5.77,2151,31.5,14.71,38.77,24.06,2016
+Dangal,UTV Motion Pictures,88,94,Action,331,3.25,9819,9.5,12.39,305.15,292.76,2016
+Deadpool,Twentieth Century Fox,85,90,Action,3558,132.43,37220,58,363.07,801.03,437.96,2016
+Deepwater Horizon,Lionsgate,83,82,Drama,3259,20.22,6204,156,61.43,122.6,61.17,2016
+Denial,Bleecker Street Media,82,71,Drama,5,0.09,18000,10,4.07,9.26,5.19,2016
+Dirty Grandpa,Lionsgate,11,44,Comedy,2912,11.11,3815,11.5,35.59,105.08,69.49,2016
+Doctor Strange,Walt Disney Studios Motion Pictures,89,86,Action,3882,85.06,21911,165,232.64,676.4,443.76,2016
+Don't Breathe,Screen Gems,88,78,Horror,3051,26.41,8656,10,89.22,158.97,69.75,2016
+Don't Think Twice,The Film Arcade,98,69,Comedy,1,0.09,90000,3,4.42,4.42,0,2016
+Eddie the Eagle,Twentieth Century Fox,82,82,Drama,2042,6.08,2977,23,15.79,45.06,29.27,2016
+Elle,Sony Pictures Classics,91,73,Drama,2,0.05,25000,9.1,2.34,16.52,14.18,2016
+Everybody Wants Some!!,Paramount Pictures,87,68,Comedy,19,0.31,16316,10,3.4,5.44,2.04,2016
+Eye in the Sky,Bleecker Street Media,95,82,Thriller,5,0.11,22000,13,18.7,35.4,16.7,2016
+Fantastic Beasts and Where to Find Them,Warner Bros.,74,79,Adventure,4144,74.4,17954,180,234.04,802.4,568.36,2016
+Fences,Paramount Pictures,92,75,Drama,4,0.13,32500,24,57.68,64.28,6.6,2016
+Fifty Shades of Black,Open Road Films (II),7,19,Comedy,2075,5.9,2843,5,11.69,22.11,10.42,2016
+Finding Dory,Walt Disney Studios Motion Pictures,94,84,Adventure,4305,135.06,31373,200,486.3,1028.57,542.27,2016
+Florence Foster Jenkins,Paramount Pictures,88,68,Drama,1528,6.6,4319,29,27.38,56,28.62,2016
+Free State of Jones,STX Entertainment,46,64,Drama,2815,7.57,2689,50,20.81,23.24,2.43,2016
+Ghostbusters,Sony Pictures Releasing,74,50,Comedy,3963,46.02,11612,144,128.35,229.01,100.66,2016
+God's Not Dead 2,Pure Flix Entertainment,8,62,Drama,2419,7.62,3150,5,20.77,23.55,2.78,2016
+Gods of Egypt,Lionsgate,16,37,Adventure,3117,14.12,4530,140,31.15,138.84,107.69,2016
+Greater,"Hammond Entertainment, LLC",67,85,Drama,340,0.63,1853,9,2,2,0,2016
+Green Room,A24,91,75,Horror,3,0.09,30000,5,3.22,3.81,0.59,2016
+Hacksaw Ridge,Lionsgate,85,91,Drama,2886,15.19,5263,40,67.21,168.9,101.69,2016
+"Hail, Caesar!",Universal Pictures,86,44,Comedy,2232,11.36,5090,22,30.5,64.22,33.72,2016
+Hands of Stone,The Weinstein Company,44,52,Drama,810,1.75,2160,20,4.71,5.03,0.32,2016
+Hardcore Henry,STX Entertainment,50,54,Action,3015,5.11,1695,2,9.25,17.19,7.94,2016
+Hell or High Water,Lionsgate,97,88,Western,32,0.62,19375,12,27.01,37.58,10.57,2016
+"Hello, My Name Is Doris",Roadside Attractions,84,76,Drama,4,0.08,20000,1,14.44,14.66,0.22,2016
+Hidden Figures,Twentieth Century Fox,93,93,Drama,25,0.52,20800,25,169.61,231.77,62.16,2016
+Hillary's America: The Secret History of the Democratic Party,Quality Flix,4,80,Documentary,3,0.07,23333,5,13.1,13.1,0,2016
+Hillsong: Let Hope Rise,Pure Flix Entertainment,60,79,Documentary,816,1.36,1667,10,2.39,2.68,0.29,2016
+How to Be Single,Warner Bros.,46,47,Romantic Comedy,3343,17.88,5348,37,46.84,100,53.16,2016
+Hunt for the Wilderpeople,The Orchard,96,91,Comedy,5,0.08,16000,2.5,5.21,23.85,18.64,2016
+Ice Age: Collision Course,Twentieth Century Fox,18,39,Adventure,3992,21.37,5353,105,64.06,402.16,338.1,2016
+I'm Not Ashamed,Pure Flix Entertainment,20,82,Drama,505,0.93,1842,2,2.08,2.08,0,2016
+Incarnate,BH Tilt,18,23,Horror,1737,2.53,1457,5,4.8,9.37,4.57,2016
+Independence Day: Resurgence,Twentieth Century Fox,29,30,Action,4130,41.04,9937,165,103.14,384.17,281.03,2016
+Inferno,Sony Pictures Releasing,23,36,Thriller,3576,14.86,4155,75,34.34,219.52,185.18,2016
+Jack Reacher: Never Go Back,Paramount Pictures,37,42,Action,3780,22.87,6050,60,58.7,159.95,101.25,2016
+Jackie,Fox Searchlight Pictures,87,60,Drama,5,0.28,56000,9,13.96,36.59,22.63,2016
+Jason Bourne,Universal Pictures,55,55,Action,4026,59.22,14709,120,162.43,416.17,253.74,2016
+Keanu,Warner Bros.,78,55,Comedy,2658,9.45,3555,15,20.59,20.69,0.1,2016
+Keeping Up with the Joneses,Twentieth Century Fox,19,37,Comedy,3022,5.46,1807,40,14.9,29.92,15.02,2016
+Kevin Hart: What Now?,Universal Pictures,76,58,Concert,2567,11.77,4585,10,23.59,23.59,0,2016
+Kubo and the Two Strings,Focus Features,97,86,Adventure,3260,12.61,3868,55,48.02,77.55,29.53,2016
+Kung Fu Panda 3,Twentieth Century Fox,87,78,Adventure,3955,41.28,10437,140,143.53,517.6,374.07,2016
+La La Land,Lionsgate,91,81,Musical,5,0.88,176000,20,151.1,426.35,275.25,2016
+Lights Out,Warner Bros.,76,61,Horror,2818,21.69,7697,5,67.27,148.81,81.54,2016
+Lion,The Weinstein Company,85,91,Drama,4,0.12,30000,12,51.74,149.57,97.83,2016
+Live by Night,Warner Bros.,35,42,Drama,4,0.03,7500,65,10.38,21.77,11.39,2016
+London Has Fallen,Focus Features,27,51,Thriller,3490,21.64,6201,60,62.52,195.19,132.67,2016
+Loving,Focus Features,89,76,Drama,4,0.16,40000,9,7.75,12.9,5.15,2016
+Manchester by the Sea,Roadside Attractions,96,78,Drama,4,0.26,65000,8.5,47.7,77.73,30.03,2016
+Max Steel,Open Road Films (II),0,48,Action,2034,2.18,1072,10,3.82,4.56,0.74,2016
+Me Before You,Warner Bros.,56,73,Drama,2704,18.72,6923,20,56.25,208.27,152.02,2016
+Mechanic: Resurrection,Lionsgate,32,40,Action,2258,7.46,3304,40,21.22,125.73,104.51,2016
+Meet the Blacks,Freestyle Releasing,17,73,Comedy,1015,4.06,4000,0.9,9.1,9.1,0,2016
+Mei ren yu,Sony Pictures Releasing,95,60,Romantic Comedy,35,0.99,28286,60.72,3.23,554.52,551.29,2016
+Middle School: The Worst Years of My Life,Lionsgate,63,58,Adventure,2822,6.88,2438,8.5,20.01,23.31,3.3,2016
+Midnight Special,Warner Bros.,83,67,Drama,5,0.19,38000,18,3.71,7.68,3.97,2016
+Mike and Dave Need Wedding Dates,Twentieth Century Fox,37,51,Comedy,2982,16.63,5577,33,46.01,75.9,29.89,2016
+Miracles from Heaven,TriStar Pictures,45,81,Drama,3047,14.81,4861,13,61.71,73.8,12.09,2016
+Miss Peregrine's Home for Peculiar Children,Twentieth Century Fox,64,60,Adventure,3522,28.87,8197,110,87.24,295.99,208.75,2016
+Miss Sloane,EuropaCorp,76,71,Drama,3,0.06,20000,18,3.5,7.72,4.22,2016
+Moana,Walt Disney Studios Motion Pictures,96,89,Musical,3875,56.63,14614,150,248.76,637.52,388.76,2016
+Money Monster,TriStar Pictures,59,51,Thriller,3104,14.79,4765,27,41.01,93.47,52.46,2016
+Moonlight,A24,98,79,Drama,4,0.4,1.00E+05,1.5,27.85,65.25,37.4,2016
+Morgan,Twentieth Century Fox,38,30,Thriller,2020,2.01,995,8,3.92,7.3,3.38,2016
+Mother's Day,Open Road Films (II),6,44,Romantic Comedy,3035,8.37,2758,25,32.49,52.37,19.88,2016
+My Big Fat Greek Wedding 2,Universal Pictures,28,53,Comedy,3133,17.86,5701,18,59.69,92.1,32.41,2016
+Neighbors 2: Sorority Rising,Universal Pictures,63,44,Comedy,3384,21.76,6430,35,55.46,108.76,53.3,2016
+Nerve,Lionsgate,67,66,Thriller,2538,9.45,3723,20,38.58,70.65,32.07,2016
+Nine Lives,EuropaCorp,14,41,Adventure,2264,6.25,2761,30,19.7,57.81,38.11,2016
+Nocturnal Animals,Focus Features,74,73,Thriller,37,0.49,13243,22.5,10.66,32.4,21.74,2016
+Norm of the North,Lionsgate,9,22,Adventure,2411,6.84,2837,18,17.06,30.54,13.48,2016
+Now You See Me 2,Lionsgate,34,53,Thriller,3232,22.38,6925,90,65.08,328.33,263.25,2016
+Office Christmas Party,Paramount Pictures,40,40,Comedy,3210,16.89,5262,45,54.77,91.32,36.55,2016
+Ouija: Origin of Evil,Universal Pictures,82,57,Horror,3167,14.07,4443,9,35.14,81.83,46.69,2016
+Passengers,Sony Pictures Releasing,30,63,Thriller,3478,14.87,4275,110,100.01,302.24,202.23,2016
+Paterson,Bleecker Street Media,96,72,Comedy,4,0.07,17500,5,2.15,10.73,8.58,2016
+Patriots Day,Lionsgate,80,86,Thriller,7,0.16,22857,40,31.89,52.84,20.95,2016
+Pete's Dragon,Walt Disney Studios Motion Pictures,88,72,Adventure,3702,21.51,5810,65,76.23,137.77,61.54,2016
+Popstar: Never Stop Never Stopping,Universal Pictures,78,65,Comedy,2311,4.7,2034,20,9.64,9.54,-0.1,2016
+Pride and Prejudice and Zombies,Screen Gems,45,44,Black Comedy,2931,5.32,1815,28,10.94,16.64,5.7,2016
+Queen of Katwe,Walt Disney Studios Motion Pictures,93,87,Drama,52,0.3,5769,15,8.87,10.06,1.19,2016
+Race,Focus Features,62,77,Drama,2369,7.35,3103,5,19.21,23.75,4.54,2016
+Ratchet and Clank,Focus Features,21,42,Adventure,2891,4.87,1685,20,8.82,14.37,5.55,2016
+Ride Along 2,Universal Pictures,14,48,Comedy,3175,35.24,11099,40,91.22,124.83,33.61,2016
+Risen,Sony Pictures Releasing,53,69,Drama,2915,11.8,4048,20,36.88,46.26,9.38,2016
+Rogue One: A Star Wars Story,Walt Disney Studios Motion Pictures,83,86,Adventure,4157,155.08,37306,200,532.18,1056.06,523.88,2016
+Rules Don't Apply,Twentieth Century Fox,55,34,Romantic Comedy,2382,1.59,668,27,3.65,3.87,0.22,2016
+Sausage Party,Sony Pictures Releasing,83,50,Comedy,3103,34.26,11041,19,97.69,141.34,43.65,2016
+Shut In,EuropaCorp,9,22,Thriller,2058,3.61,1754,10,6.9,11.36,4.46,2016
+Silence,Paramount Pictures,83,69,Drama,4,0.13,32500,46.5,7.1,23.73,16.63,2016
+Sing,Universal Pictures,72,72,Adventure,4022,35.26,8767,75,270.4,634.45,364.05,2016
+Snowden,Open Road Films (II),60,70,Drama,2443,8,3275,50,21.59,35.38,13.79,2015
+Star Trek Beyond,Paramount Pictures,86,80,Adventure,3928,59.25,15084,185,158.85,335.8,176.95,2016
+Storks,Warner Bros.,66,62,Adventure,3922,21.31,5433,70,72.68,183.35,110.67,2016
+Suicide Squad,Warner Bros.,27,59,Action,4255,133.68,31417,175,325.1,746.06,420.96,2016
+Sully,Warner Bros.,86,84,Drama,3525,35.03,9938,60,125.07,238.52,113.45,2016
+Sultan,-,83,76,Action,282,2.37,8404,11,6.2,72.99,66.79,2016
+Swiss Army Man,A24,71,72,Drama,3,0.11,36667,3,4.21,5.84,1.63,2016
+Teenage Mutant Ninja Turtles: Out of the Shadows,Paramount Pictures,37,37,Adventure,4071,35.32,8676,135,82.05,245.33,163.28,2016
+The 5th Wave,Sony Pictures Releasing,15,38,Action,2908,10.33,3552,38,34.92,111.34,76.42,2016
+The Accountant,Warner Bros.,52,76,Thriller,3332,24.71,7416,40,86.26,152.96,66.7,2016
+The Angry Birds Movie,Sony Pictures Releasing,44,46,Adventure,3932,38.16,9705,73,107.51,352.33,244.82,2016
+The BFG,Walt Disney Studios Motion Pictures,75,57,Adventure,3357,18.78,5594,140,55.48,199.65,144.17,2016
+The Birth of a Nation,Fox Searchlight Pictures,72,71,Drama,2105,7,3325,10,15.86,16.89,1.03,2016
+The Boss,Universal Pictures,21,38,Comedy,3480,23.59,6779,29,63.29,78.65,15.36,2016
+The Boy,STX Entertainment,30,38,Thriller,2671,10.78,4036,10,35.82,68.22,32.4,2016
+The Brothers Grimsby,Sony Pictures Releasing,38,41,Comedy,2235,3.26,1459,35,6.87,28.72,21.85,2016
+The Conjuring 2,Warner Bros.,80,81,Horror,3343,40.41,12088,40,102.47,311.26,208.79,2016
+The Darkness,BH Tilt,3,19,Horror,1755,4.95,2821,4,10.75,10.9,0.15,2016
+The Disappointments Room,Relativity Media,0,17,Horror,1554,1.4,901,15,2.42,3.5,1.08,2016
+The Dressmaker,Broad Green Pictures,56,66,Drama,36,0.19,5278,11.9,2.02,24.04,22.02,2015
+The Edge of Seventeen,STX Entertainment,94,83,Drama,1945,4.75,2442,9,14.43,19.1,4.67,2016
+The Finest Hours,Walt Disney Studios Motion Pictures,64,66,Thriller,3143,10.29,3274,70,27.57,49.25,21.68,2016
+The Forest,Focus Features,10,22,Thriller,2451,12.74,5198,10,26.59,40.75,14.16,2016
+The Girl on the Train,Universal Pictures,44,49,Thriller,3144,24.54,7805,45,75.4,174.28,98.88,2016
+The Huntsman: Winter's War,Universal Pictures,18,45,Action,3791,19.45,5131,115,48,165.15,117.15,2016
+The Infiltrator,Broad Green Pictures,72,71,Thriller,1601,5.3,3310,47.5,15.44,20.72,5.28,2016
+The Jungle Book,Walt Disney Studios Motion Pictures,95,86,Adventure,4028,103.26,25636,175,364,962.85,598.85,2016
+The Legend of Tarzan,Warner Bros.,36,58,Adventure,3561,38.53,10820,180,126.64,348.9,222.26,2016
+The Light Between Oceans,Walt Disney Studios Motion Pictures,62,61,Drama,1500,4.77,3180,20,12.55,22.28,9.73,2016
+The Magnificent Seven,Sony Pictures Releasing,63,72,Western,3674,34.7,9445,90,93.43,162.53,69.1,2016
+The Man Who Knew Infinity,IFC Films,62,71,Drama,6,0.08,13333,10,3.87,12.38,8.51,2016
+The Nice Guys,Warner Bros.,93,79,Black Comedy,2865,11.2,3909,50,36.26,59.6,23.34,2016
+The Other Side of the Door,Twentieth Century Fox,35,29,Horror,546,1.21,2216,5,3,12.91,9.91,2016
+The Perfect Match,Lionsgate,25,44,Romantic Comedy,925,4.29,4638,5,9.67,10.18,0.51,2016
+The Purge: Election Year,Universal Pictures,55,48,Horror,2796,31.52,11273,10,79.21,118.51,39.3,2016
+The Secret Life of Pets,Universal Pictures,73,62,Adventure,4370,104.35,23879,75,368.38,886.61,518.23,2016
+The Shallows,Sony Pictures Releasing,79,59,Drama,2962,16.8,5672,13,55.12,118.76,63.64,2016
+The Witch,A24,90,58,Horror,2046,8.8,4301,3.5,25.14,40.45,15.31,2016
+The Young Messiah,Focus Features,47,65,Drama,1761,3.29,1868,16.8,6.49,7.31,0.82,2016
+Triple 9,Open Road Films (II),53,41,Thriller,2205,6.11,2771,20,12.64,25.94,13.3,2016
+Trolls,Twentieth Century Fox,76,67,Adventure,4060,46.58,11473,125,153.71,344.15,190.44,2016
+Tyler Perry's Boo! A Madea Halloween,Lionsgate,19,52,Comedy,2260,28.5,12611,20,73.21,73.21,0,2016
+War Dogs,Warner Bros.,61,68,Comedy,3258,14.69,4509,50,43.03,86.23,43.2,2016
+Warcraft,Universal Pictures,28,76,Action,3400,24.17,7109,160,47.37,438.9,391.53,2016
+When the Bough Breaks,Screen Gems,13,45,Thriller,2246,14.2,6322,10,29.75,30.77,1.02,2016
+Whiskey Tango Foxtrot,Paramount Pictures,68,55,Comedy,2374,7.45,3138,35,23.08,25.35,2.27,2016
+Why Him?,Twentieth Century Fox,39,51,Comedy,2917,11,3771,38,60.32,117.43,57.11,2016
+X-Men: Apocalypse,Twentieth Century Fox,47,56,Action,4150,65.77,15848,178,155.44,542.54,387.1,2016
+Zoolander 2,Paramount Pictures,22,20,Comedy,3394,13.84,4078,50,28.85,55.35,26.5,2016
+Zootopia,Walt Disney Studios Motion Pictures,97,92,Adventure,3827,75.06,19613,150,341.27,1036.37,695.1,2016
+47 Meters Down,Entertainment Studios Motion Pictures,54,36,Horror,2270,11.21,4938,5,44.31,62.19,17.88,2017
+A Bad Moms Christmas,STX Entertainment,31,44,Comedy,3615,16.76,4636,28,72.11,127.71,55.6,2017
+A Cure for Wellness,Twentieth Century Fox,42,41,Thriller,2704,4.36,1612,40,8.11,26.62,18.51,2017
+A Dog's Purpose,Universal Pictures,35,73,Drama,3059,18.22,5956,25,64.32,203.67,139.35,2017
+Alien: Covenant,Twentieth Century Fox,66,55,Horror,3761,36.16,9614,97,74.26,238.52,164.26,2017
+All Eyez on Me,Lionsgate,18,53,Drama,2471,26.44,10700,45,44.92,54.88,9.96,2017
+All Saints,Affirm Films,95,72,Drama,846,1.51,1785,2,5.8,5.94,0.14,2017
+American Assassin,Lionsgate,34,61,Thriller,3154,14.85,4708,63,36.25,68.31,32.06,2017
+American Made,Universal Pictures,86,78,Thriller,3024,16.78,5549,50,51.34,135.57,84.23,2017
+An Inconvenient Sequel: Truth to Power,Paramount Pictures,79,50,Documentary,4,0.12,30000,1,3.5,5.84,2.34,2017
+Annabelle: Creation,Warner Bros.,70,67,Horror,3502,35.01,9997,15,102.09,305.38,203.29,2017
+Atomic Blonde,Focus Features,78,64,Thriller,3304,18.29,5536,30,51.69,98.35,46.66,2017
+Baahubali 2: The Conclusion,Great India Films,89,87,Action,425,10.43,24541,30,20.19,263.5,243.31,2017
+Baby Driver,TriStar Pictures,93,86,Thriller,3226,20.55,6370,34,107.83,228.1,120.27,2017
+Battle of the Sexes,Fox Searchlight Pictures,85,71,Drama,21,0.52,24762,25,12.64,18.45,5.81,2017
+Baywatch,Paramount Pictures,18,55,Comedy,3647,18.5,5073,60,58.06,175.86,117.8,2017
+Beauty and the Beast,Walt Disney Studios Motion Pictures,71,80,Musical,4210,174.75,41508,160,504.01,1263.52,759.51,2017
+Before I Fall,Open Road Films (II),64,57,Drama,2346,4.69,1999,5,12.24,18.95,6.71,2017
+Birth of the Dragon,BH Tilt,24,68,Action,1618,2.7,1669,31,6.9,7.22,0.32,2017
+Blade Runner 2049,Warner Bros.,87,81,Thriller,4058,32.75,8070,185,92.05,259.36,167.31,2017
+Boo 2! A Madea Halloween,Lionsgate,5,40,Comedy,2388,21.23,8890,20,47.32,47.88,0.56,2017
+Captain Underpants: The First Epic Movie,Twentieth Century Fox,88,61,Adventure,3434,23.85,6945,38,73.92,126.58,52.66,2017
+Cars 3,Walt Disney Studios Motion Pictures,69,69,Adventure,4256,53.69,12615,175,152.9,383.54,230.64,2017
+CHIPS,Warner Bros.,18,45,Action,2464,7.72,3133,25,18.6,23.19,4.59,2017
+Coco,Walt Disney Studios Motion Pictures,97,94,Musical,3987,50.8,12741,175,209.73,807.13,597.4,2017
+Collide,Open Road Films (II),21,35,Action,2045,1.51,738,29.2,2.28,5.47,3.19,2016
+Daddy's Home 2,Paramount Pictures,21,50,Comedy,3575,29.65,8294,70,104.03,175.81,71.78,2017
+Darkest Hour,Focus Features,85,82,Drama,4,0.18,45000,30,56.47,150.83,94.36,2017
+Despicable Me 3,Universal Pictures,58,53,Adventure,4529,72.43,15992,75,264.62,1034.72,770.1,2017
+Detroit,Annapurna Pictures,84,79,Drama,20,0.35,17500,40,16.79,26.03,9.24,2017
+Diary of a Wimpy Kid: The Long Haul,Twentieth Century Fox,18,33,Adventure,3157,7.13,2258,22,20.74,35.61,14.87,2017
+Downsizing,Paramount Pictures,48,22,Comedy,2668,4.95,1855,68,24.45,54.46,30.01,2017
+Dunkirk,Warner Bros.,93,81,Action,3720,50.51,13578,150,188.05,499.84,311.79,2017
+"Everything, Everything",Warner Bros.,45,62,Drama,2801,11.73,4188,10,34.12,61.6,27.48,2017
+Father Figures,Warner Bros.,17,25,Comedy,2902,3.29,1134,25,17.5,21.04,3.54,2017
+Ferdinand,Twentieth Century Fox,71,50,Adventure,3621,13.4,3701,111,84.41,289.84,205.43,2017
+Fifty Shades Darker,Universal Pictures,11,48,Drama,3710,46.61,12563,55,114.58,381.4,266.82,2017
+Fist Fight,Warner Bros.,24,40,Comedy,3185,12.2,3830,25,32.19,40.29,8.1,2017
+Flatliners,Sony Pictures Releasing,48,33,Thriller,2552,6.57,2574,20,16.88,45.17,28.29,2017
+Free Fire,A24,69,52,Action,1070,0.99,925,10,1.8,3.79,1.99,2017
+Friend Request,Entertainment Studios Motion Pictures,16,28,Thriller,2573,2,777,9.9,3.76,11.31,7.55,2017
+Geostorm,Warner Bros.,16,36,Action,3246,13.71,4224,100,33.7,220.8,187.1,2017
+Get Out,Universal Pictures,98,86,Horror,2781,33.38,12003,5,176.04,255.41,79.37,2017
+Ghost in the Shell,Paramount Pictures,44,51,Action,3440,18.68,5430,110,40.56,167.91,127.35,2017
+Gifted,Fox Searchlight Pictures,73,85,Drama,56,0.45,8036,7,24.8,36.96,12.16,2017
+Girls Trip,Universal Pictures,91,78,Comedy,2591,31.2,12042,28,115.17,140.89,25.72,2017
+Going in Style,Warner Bros.,48,57,Comedy,3061,11.93,3897,24,45.02,78.67,33.65,2017
+Guardians of the Galaxy Vol. 2,Walt Disney Studios Motion Pictures,84,87,Action,4347,146.51,33704,200,389.81,869.11,479.3,2017
+Happy Death Day,Universal Pictures,71,66,Horror,3149,26.04,8269,5,55.68,125.01,69.33,2017
+Home Again,Open Road Films (II),33,45,Romantic Comedy,2940,8.57,2915,15,27.02,37.34,10.32,2017
+How to Be a Latin Lover,Pantelion Films,40,61,Comedy,1118,12.25,10957,10,32.15,62.56,30.41,2017
+I Am Not Your Negro,Magnolia Pictures,98,83,Documentary,43,0.69,16047,1,7.12,9.62,2.5,2017
+"I, Tonya",Neon,89,88,Black Comedy,4,0.26,65000,11,30.01,53.8,23.79,2017
+It,Warner Bros.,86,84,Horror,4103,123.4,30076,35,327.48,701.73,374.25,2017
+It Comes At Night,A24,87,44,Horror,2533,5.99,2365,5,13.99,19.72,5.73,2017
+Jigsaw,Lionsgate,33,90,Horror,2941,16.64,5658,10,38.05,104.22,66.17,2017
+Jumanji: Welcome to the Jungle,Sony Pictures Releasing,76,87,Adventure,3765,36.17,9607,90,404.52,964.5,559.98,2017
+Just Getting Started,Broad Green Pictures,5,10,Comedy,2161,3.2,1481,22,6.07,6.76,0.69,2017
+Justice League,Warner Bros.,40,72,Action,4051,93.84,23165,300,229.02,655.95,426.93,2017
+Kidnap,Aviron Pictures,38,50,Thriller,2378,10.02,4214,21,30.97,34.84,3.87,2017
+King Arthur: Legend of the Sword,Warner Bros.,31,69,Adventure,3702,15.37,4152,175,39.18,139.63,100.45,2017
+Kingsman: The Golden Circle,Twentieth Century Fox,52,64,Action,4003,39.02,9748,104,100.23,408.8,308.57,2017
+Kong: Skull Island,Warner Bros.,75,69,Adventure,3846,61.03,15868,185,168.05,561.07,393.02,2017
+Lady Bird,A24,99,79,Drama,4,0.36,90000,10,48.96,78.94,29.98,2017
+LBJ,Electric Entertainment,57,55,Drama,659,1.11,1684,20,2.47,2.51,0.04,2017
+Let There Be Light,Atlas Distribution Company,10,72,Drama,373,1.73,4638,3,7.23,7.24,0.01,2017
+Life,Sony Pictures Releasing,67,54,Drama,3146,12.5,3973,58,30.23,100.93,70.7,2017
+Logan,Twentieth Century Fox,93,90,Action,4071,88.41,21717,127,226.28,615.46,389.18,2017
+Logan Lucky,Bleecker Street Media,92,75,Comedy,3031,7.6,2507,29,27.78,44.26,16.48,2017
+Loving Vincent,Good Deed Entertainment,85,86,Drama,1,0.02,20000,5.5,6.74,44.36,37.62,2017
+Lowriders,BH Tilt,57,61,Drama,295,2.4,8136,0.92,6.3,6.19,-0.11,2017
+Marshall,Open Road Films (II),80,84,Drama,821,3,3654,12,10.05,10.12,0.07,2017
+Molly's Game,STX Entertainment,82,84,Drama,271,2.35,8672,30,28.78,53.3,24.52,2017
+Monster Trucks,Paramount Pictures,32,51,Adventure,3119,10.95,3511,125,33.37,61.64,28.27,2017
+Mother!,Paramount Pictures,69,50,Thriller,2368,7.53,3180,30,17.8,42.53,24.73,2017
+Murder on the Orient Express,Twentieth Century Fox,60,53,Drama,3341,28.68,8584,55,102.83,345.92,243.09,2017
+My Little Pony: The Movie,Lionsgate,48,76,Adventure,2528,8.89,3517,7,21.89,60.33,38.44,2017
+Only The Brave,Sony Pictures Releasing,87,91,Drama,2577,6,2328,38,18.34,24.56,6.22,2017
+Phantom Thread,Focus Features,91,70,Drama,4,0.22,55000,35,21.2,47.9,26.7,2017
+Phoenix Forgotten,Cinelou Films,41,41,Thriller,1626,1.82,1119,3,3.6,3.7,0.1,2017
+Pirates of the Caribbean: Dead Men Tell No Tales,Walt Disney Studios Motion Pictures,30,61,Adventure,4276,62.98,14729,230,172.56,788.24,615.68,2017
+Pitch Perfect 3,Universal Pictures,30,44,Comedy,3447,19.93,5782,45,104.9,185.74,80.84,2017
+Power Rangers,Lionsgate,50,65,Action,3693,40.3,10913,120,85.36,142.53,57.17,2017
+Resident Evil: The Final Chapter,Screen Gems,37,48,Action,3104,13.6,4381,40,26.83,314.1,287.27,2017
+Rings,Paramount Pictures,8,23,Horror,2931,13,4435,25,27.79,82.92,55.13,2017
+Rock Dog,Lionsgate,47,47,Adventure,2077,3.7,1781,60,9.42,24.15,14.73,2017
+"Roman J. Israel, Esq.",Sony Pictures Releasing,53,53,Drama,4,0.06,15000,22,11.96,12.97,1.01,2017
+Rough Night,Sony Pictures Releasing,44,29,Black Comedy,3162,8,2530,20,22.11,46.84,24.73,2017
+Same Kind of Different as Me,Pure Flix Entertainment,33,86,Drama,1362,2.59,1902,6.5,6.42,6.42,0,2017
+Smurfs: The Lost Village,Sony Pictures Releasing,40,54,Adventure,3610,13.21,3659,60,45.02,197.58,152.56,2017
+Snatched,Twentieth Century Fox,36,30,Comedy,3501,19.54,5581,42,45.85,57.85,12,2017
+Spider-Man: Homecoming,Sony Pictures Releasing,92,87,Action,4348,117.03,26916,175,334.2,880.17,545.97,2017
+Split,Universal Pictures,77,79,Horror,3038,40.01,13170,5,138.29,278.96,140.67,2017
+Star Wars: Episode VIII - The Last Jedi,Walt Disney Studios Motion Pictures,91,43,Adventure,4232,220.01,51987,262,620.18,1332.54,712.36,2017
+Stronger,Roadside Attractions,90,80,Drama,573,1.61,2810,30,4.21,8.79,4.58,2017
+T2 Trainspotting,TriStar Pictures,81,78,Drama,5,0.17,34000,18,2.4,42.09,39.69,2017
+Table 19,Fox Searchlight Pictures,26,40,Comedy,868,1.6,1843,5,3.61,4.62,1.01,2017
+Thank You for Your Service,Universal Pictures,77,73,Drama,2054,3.82,1860,20,9.54,9.99,0.45,2017
+The Belko Experiment,BH Tilt,52,40,Horror,1341,4.14,3087,5,10.17,11.79,1.62,2017
+The Big Sick,Lionsgate,98,88,Romantic Comedy,5,0.42,84000,5,42.87,53.97,11.1,2017
+The Boss Baby,Twentieth Century Fox,52,51,Adventure,3773,50.2,13305,125,175,510.88,335.88,2017
+The Bye Bye Man,STX Entertainment,19,22,Thriller,2220,13.5,6081,7.4,22.4,31.19,8.79,2017
+The Circle,STX Entertainment,15,21,Thriller,3163,9.03,2855,18,20.5,40.65,20.15,2017
+The Dark Tower,Sony Pictures Releasing,16,45,Western,3451,19.15,5549,60,50.7,113.46,62.76,2017
+The Disaster Artist,A24,91,86,Comedy,19,1.21,63684,10,21.12,28.72,7.6,2017
+The Emoji Movie,Sony Pictures Releasing,7,38,Adventure,4075,24.53,6020,50,86.09,216.56,130.47,2017
+The Fate of the Furious,Universal Pictures,67,72,Action,4310,98.79,22921,250,226.01,1238.76,1012.75,2017
+The Florida Project,A24,96,80,Drama,4,0.16,40000,2,5.9,11.3,5.4,2017
+The Foreigner,STX Entertainment,65,72,Action,2515,13.11,5213,35,34.39,140.78,106.39,2017
+The Founder,The Weinstein Company,81,82,Drama,1115,3.4,3049,15,12.79,24.4,11.61,2016
+The Great Wall,Universal Pictures,36,42,Action,3326,18.47,5553,150,45.54,334.49,288.95,2017
+The Greatest Showman,Twentieth Century Fox,56,86,Musical,3006,8.81,2931,84,174.34,440.97,266.63,2017
+The Hitman's Bodyguard,Lionsgate,43,67,Action,3377,21.38,6331,30,75.47,172.78,97.31,2017
+The House,Warner Bros.,20,35,Comedy,3134,8.72,2782,40,25.58,31.19,5.61,2017
+The Lego Batman Movie,Warner Bros.,89,80,Adventure,4088,53,12965,80,175.75,310.66,134.91,2017
+The Lego Ninjago Movie,Warner Bros.,55,46,Adventure,4047,20.43,5048,70,59.28,122.74,63.46,2017
+The Lost City of Z,Bleecker Street Media,86,57,Action,4,0.11,27500,30,8.58,17.12,8.54,2017
+The Mummy,Universal Pictures,16,35,Adventure,4035,31.69,7854,195,80.23,409.95,329.72,2017
+The Nut Job 2: Nutty by Nature,Open Road Films (II),14,44,Adventure,4003,8.34,2083,40,28.37,57.44,29.07,2017
+The Post,Twentieth Century Fox,88,73,Drama,9,0.53,58889,50,81.9,179.77,97.87,2017
+The Promise,Open Road Films (II),51,92,Drama,2251,4.1,1821,90,8.22,10.55,2.33,2017
+The Resurrection of Gavin Stone,BH Tilt,50,83,Comedy,890,1.21,1360,2,2.3,2.3,0,2017
+The Shape of Water,Fox Searchlight Pictures,92,72,Drama,2,0.17,85000,19.5,63.86,195.79,131.93,2017
+The Snowman,Universal Pictures,7,18,Thriller,1812,3.37,1860,35,6.7,43.23,36.53,2017
+The Space Between Us,STX Entertainment,17,55,Drama,2812,3.78,1344,30,7.89,16.48,8.59,2017
+The Square,Magnolia Pictures,85,70,Drama,4,0.07,17500,1.9,1.5,0.74,-0.76,2017
+The Star,Sony Pictures Releasing,42,71,Adventure,2837,9.81,3458,20,40.85,62.76,21.91,2017
+The Wall,Roadside Attractions,65,42,Thriller,540,0.9,1667,3,1.8,4.5,2.7,2017
+The Zookeeper's Wife,Focus Features,63,76,Drama,541,3.29,6081,20,17.45,26.31,8.86,2017
+Thor: Ragnarok,Walt Disney Studios Motion Pictures,93,87,Action,4080,122.74,30083,180,315.06,853.96,538.9,2017
+"Three Billboards Outside Ebbing, Missouri",Fox Searchlight Pictures,90,87,Drama,4,0.32,80000,12,54.51,160.19,105.68,2017
+Transformers: The Last Knight,Paramount Pictures,15,44,Action,4069,44.68,10981,217,130.17,602.89,472.72,2017
+Tulip Fever,The Weinstein Company,10,43,Drama,765,1.16,1516,25,2.46,6.79,4.33,2017
+Underworld: Blood Wars,Screen Gems,19,49,Action,3070,13.69,4459,35,30.35,81.21,50.86,2017
+Unforgettable,Warner Bros.,26,33,Thriller,2417,4.79,1982,12,11.37,16.22,4.85,2017
+Valerian and the City of a Thousand Planets,STX Entertainment,47,53,Adventure,3553,17.01,4788,180,41.19,215.1,173.91,2017
+Victoria & Abdul,Focus Features,66,67,Drama,4,0.16,40000,21,22.25,68.27,46.02,2017
+War for the Planet of the Apes,Twentieth Century Fox,94,84,Action,4022,56.26,13988,152,146.88,489.59,342.71,2017
+Wind River,The Weinstein Company,88,90,Thriller,4,0.16,40000,11,33.8,43.98,10.18,2017
+Wish Upon,Broad Green Pictures,20,30,Horror,2250,5.47,2431,12,14.3,23.48,9.18,2017
+Wonder,Lionsgate,85,88,Drama,3096,27.55,8899,20,132.42,304.6,172.18,2017
+Wonder Woman,Warner Bros.,93,88,Action,4165,103.25,24790,150,412.56,821.13,408.57,2017
+xXx: Return of Xander Cage,Paramount Pictures,45,37,Action,3651,20.13,5514,85,44.9,345.03,300.13,2017
+Youth,China Lion Film Distribution,81,91,Drama,30,0.34,11333,13,1.89,24,22.11,2017
+12 Strong,Warner Bros.,51,62,Drama,3002,15.82,5270,35,45.82,71.12,25.3,2018
+A Quiet Place,Paramount Pictures,95,83,Horror,3508,50.2,14310,17,188.02,336.16,148.14,2018
+A Simple Favor,Lionsgate,85,73,Thriller,3102,16.01,5161,20,53.55,97.63,44.08,2018
+A Star Is Born,Warner Bros.,90,79,Drama,3686,42.91,11641,36,215.29,434.89,219.6,2018
+A Wrinkle in Time,Walt Disney Studios Motion Pictures,42,27,Adventure,3980,33.12,8322,103,100.48,133.4,32.92,2018
+Action Point,Paramount Pictures,13,25,Comedy,2032,2.39,1176,19,5.06,5.1,0.04,2018
+Adrift,STX Entertainment,70,65,Drama,3015,11.6,3847,35,31.45,57.9,26.45,2018
+Alpha,Studio 8,80,71,Adventure,2719,10.35,3807,51,35.86,99.62,63.76,2018
+Annihilation,Paramount Pictures,88,66,Thriller,2012,11.07,5502,55,32.73,43.07,10.34,2018
+Ant-Man and the Wasp,Walt Disney Studios Motion Pictures,88,76,Action,4206,75.81,18024,130,216.65,623.14,406.49,2018
+Aquaman,Warner Bros.,65,74,Action,4125,67.87,16453,160,335.06,1146.89,811.83,2018
+Assassination Nation,Neon,73,55,Thriller,1403,1.05,748,7,2.01,2.85,0.84,2018
+Avengers: Infinity War,Walt Disney Studios Motion Pictures,85,91,Action,4474,257.7,57599,300,678.82,2048.36,1369.54,2018
+Bad Times at the El Royale,Twentieth Century Fox,75,73,Thriller,2808,7.13,2539,32,17.84,29.2,11.36,2018
+Beautiful Boy,Amazon Studios,69,76,Drama,4,0.22,55000,25,7.65,13.31,5.66,2018
+Ben Is Back,Roadside Attractions,82,69,Drama,4,0.08,20000,13,3.7,9.63,5.93,2018
+Black Panther,Walt Disney Studios Motion Pictures,97,79,Action,4020,202,50249,200,700.06,1346.91,646.85,2018
+BlacKkKlansman,Focus Features,96,82,Thriller,1512,10.85,7176,15,49.28,93.41,44.13,2018
+Blockers,Universal Pictures,83,50,Comedy,3379,20.56,6085,21,60.31,94.05,33.74,2018
+Blumhouse's Truth or Dare,Universal Pictures,16,22,Horror,3029,18.67,6164,4,41.41,95.33,53.92,2018
+Bohemian Rhapsody,Twentieth Century Fox,61,85,Drama,4000,51.06,12765,55,216.43,903.53,687.1,2018
+Book Club,Paramount Pictures,54,52,Comedy,2781,13.58,4883,10,68.57,91.33,22.76,2018
+Boy Erased,Focus Features,80,74,Drama,5,0.21,42000,11,6.79,11.86,5.07,2018
+Breaking In,Universal Pictures,26,32,Thriller,2537,17.63,6949,6,46.84,51.49,4.65,2018
+Bumblebee,Paramount Pictures,92,74,Adventure,3550,21.65,6099,102,127.2,465.2,338,2018
+Can You Ever Forgive Me?,Fox Searchlight Pictures,98,80,Drama,5,0.16,32000,10,8.8,12.52,3.72,2018
+Christopher Robin,Walt Disney Studios Motion Pictures,73,83,Adventure,3602,24.59,6827,75,99.22,197.5,98.28,2018
+Crazy Rich Asians,Warner Bros.,91,76,Romantic Comedy,3384,26.51,7834,30,174.53,238.1,63.57,2018
+Creed II,Metro-Goldwyn-Mayer (MGM),84,80,Drama,3441,35.57,10337,50,115.72,213.59,97.87,2018
+Deadpool 2,Twentieth Century Fox,84,85,Action,4349,125.51,28860,110,318.49,786.68,468.19,2018
+Death of a Nation,Quality Flix,0,88,Documentary,1005,2.36,2348,6,5.89,5.89,0,2018
+Death Wish,Metro-Goldwyn-Mayer (MGM),18,72,Action,2847,13.01,4570,30,34.02,48.58,14.56,2018
+Den of Thieves,STX Entertainment,41,62,Action,2432,15.21,6254,30,44.95,80.15,35.2,2018
+Dr. Seuss' The Grinch,Universal Pictures,59,51,Adventure,4141,67.57,16317,75,270.62,511.54,240.92,2018
+Early Man,Lionsgate,81,49,Adventure,2494,3.19,1279,50,8.27,45.29,37.02,2018
+Eighth Grade,A24,99,83,Drama,4,0.26,65000,2,13.54,14.35,0.81,2018
+Every Day,Orion Pictures,62,55,Drama,1667,3.02,1812,5,6.1,10.42,4.32,2018
+Fahrenheit 11/9,Briarcliff Entertainment,82,60,Documentary,1719,3.01,1751,5,6.35,6.65,0.3,2018
+Fantastic Beasts: The Crimes of Grindelwald,Warner Bros.,37,55,Adventure,4163,62.16,14932,200,159.56,652.22,492.66,2018
+Fifty Shades Freed,Universal Pictures,12,37,Drama,3768,38.56,10234,55,100.41,371.99,271.58,2018
+First Man,Universal Pictures,87,67,Drama,3640,16.01,4398,60,44.94,105.7,60.76,2018
+First Reformed,A24,93,68,Thriller,4,0.1,25000,3.5,3.45,3.99,0.54,2018
+Forever My Girl,Roadside Attractions,24,80,Drama,1114,4.25,3815,3.5,16.38,16.38,0,2018
+Game Night,Warner Bros.,85,77,Comedy,3488,17.01,4877,37,69.18,117.38,48.2,2018
+Goosebumps 2: Haunted Halloween,Sony Pictures Releasing,48,39,Horror,3521,15.8,4487,35,46.7,93.29,46.59,2018
+Gotti,Vertical Entertainment,60,46,Drama,503,1.72,3419,10,4.34,6.09,1.75,2018
+Green Book,Universal Pictures,78,91,Comedy,25,0.32,12800,23,85.08,323.4,238.32,2018
+Halloween,Universal Pictures,79,70,Horror,3928,76.22,19404,15,159.34,255.49,96.15,2018
+Hearts Beat Loud,Gunpowder & Sky,91,73,Drama,4,0.07,17500,2,2.39,2.42,0.03,2018
+Hell Fest,Lionsgate,41,41,Horror,2297,5.13,2233,5.5,11.11,18.12,7.01,2018
+Hereditary,A24,89,66,Horror,2964,13.58,4582,10,44.07,81.3,37.23,2018
+Holmes & Watson,Sony Pictures Releasing,11,26,Comedy,2776,7.41,2669,42,30.57,41.93,11.36,2018
+Hotel Artemis,Global Road Entertainment,56,33,Thriller,2407,3.23,1342,15,6.71,13.32,6.61,2018
+Hotel Transylvania 3: Summer Vacation,Sony Pictures Releasing,62,49,Adventure,4267,44.08,10330,65,167.51,527.06,359.55,2018
+Hunter Killer,Lionsgate,36,69,Thriller,2728,6.65,2438,40,15.77,31.67,15.9,2018
+I Can Only Imagine,Roadside Attractions,61,91,Drama,1629,17.11,10503,7,83.48,85.72,2.24,2018
+I Feel Pretty,STX Entertainment,36,35,Comedy,3440,16.03,4660,32,48.8,91.55,42.75,2018
+If Beale Street Could Talk,Annapurna Pictures,95,70,Drama,4,0.22,55000,12,14.92,19.86,4.94,2018
+Incredibles 2,Walt Disney Studios Motion Pictures,94,84,Adventure,4410,182.69,41426,200,608.58,1242.81,634.23,2018
+Indivisible,Pure Flix Entertainment,72,86,Drama,830,1.5,1807,2.7,3.51,3.59,0.08,2018
+Insidious: The Last Key,Universal Pictures,33,52,Horror,3116,29.58,9493,10,67.75,172.81,105.06,2018
+Instant Family,Paramount Pictures,82,82,Comedy,3286,14.5,4413,48,67.36,119.74,52.38,2018
+Johnny English Strikes Again,Universal Pictures,37,49,Comedy,544,1.64,3015,25,4.41,158.97,154.56,2018
+Jurassic World: Fallen Kingdom,Universal Pictures,48,48,Action,4475,148.02,33077,170,417.72,1308.47,890.75,2018
+Kin,Lionsgate,32,54,Action,2141,3.04,1420,30,5.72,10.38,4.66,2018
+Life of the Party,Warner Bros.,38,40,Comedy,3656,17.89,4893,30,53.06,65.76,12.7,2018
+"Love, Simon",Twentieth Century Fox,92,88,Drama,2402,11.76,4896,10,40.83,65.52,24.69,2018
+Mamma Mia! Here We Go Again,Universal Pictures,80,66,Musical,3317,34.95,10537,75,120.63,395.04,274.41,2018
+Mary Poppins Returns,Walt Disney Studios Motion Pictures,79,65,Musical,4090,23.52,5751,130,171.96,349.56,177.6,2018
+Mary Queen of Scots,Focus Features,63,41,Drama,4,0.19,47500,25,16.47,47.02,30.55,2018
+Maze Runner: The Death Cure,Twentieth Century Fox,43,59,Thriller,3787,24.17,6382,61,58.03,265.88,207.85,2018
+Mile 22,STX Entertainment,23,44,Action,3520,13.71,3895,35,36.11,66.3,30.19,2018
+Mission: Impossible - Fallout,Paramount Pictures,97,87,Action,4386,61.24,13963,178,220.16,787.46,567.3,2018
+Mortal Engines,Universal Pictures,27,50,Action,3103,7.56,2436,100,15.95,85.29,69.34,2018
+Night School,Universal Pictures,27,38,Comedy,3010,27.26,9056,29,77.34,103.11,25.77,2018
+Nobody's Fool,Paramount Pictures,23,35,Drama,2468,13.74,5567,19,31.71,32.59,0.88,2018
+Ocean's Eight,Warner Bros.,69,45,Action,4145,41.61,10039,70,140.22,297.12,156.9,2018
+On the Basis of Sex,Focus Features,74,76,Drama,33,0.69,20909,20,24.62,38.8,14.18,2018
+Operation Finale,Metro-Goldwyn-Mayer (MGM),60,65,Drama,1818,6.02,3311,24,17.61,17.61,0,2018
+Overboard,Pantelion Films,24,55,Romantic Comedy,1623,14.71,9063,12,50.32,85.37,35.05,2018
+Overlord,Paramount Pictures,81,67,Action,2859,10.2,3568,38,21.7,41.66,19.96,2018
+Pacific Rim: Uprising,Universal Pictures,44,39,Action,3708,28.12,7584,155,59.87,290.93,231.06,2018
+"Paul, Apostle of Christ",Affirm Films,46,81,Drama,1473,5.17,3510,5,17.56,25.53,7.97,2018
+Peppermint,STX Entertainment,12,71,Action,2980,13.42,4503,25,35.42,51.8,16.38,2018
+Peter Rabbit,Sony Pictures Releasing,64,56,Adventure,3725,25.01,6714,50,115.25,347.13,231.88,2018
